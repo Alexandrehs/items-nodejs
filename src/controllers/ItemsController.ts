@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, response, Response } from 'express';
 import { ItemsService } from '../services/ItemsService';
 
 class ItemsController {
@@ -30,8 +30,15 @@ class ItemsController {
         }
     }
 
-    test() {
-        console.log('poxa abestadu funciona ne!!');
+    async getItems(request: Request, response: Response): Promise<Response> {
+        try {
+            const itemService = new ItemsService();
+            const items = await itemService.getItems();
+
+            return response.json({ items });
+        } catch (error) {
+
+        }
     }
 }
 

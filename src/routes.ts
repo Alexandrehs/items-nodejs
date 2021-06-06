@@ -6,7 +6,7 @@ const routes = Router();
 const itemsController = new ItemsController();
 
 routes.post('/items', itemsController.create);
-routes.get('/items', itemsController.test);
+routes.get('/items', itemsController.getItems);
 
 
 export { routes };

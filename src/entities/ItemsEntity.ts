@@ -22,7 +22,6 @@ class ItemsEntity {
         if (!this.id) {
             this.id = uuid();
         }
-        console.log(this.id);
     }
 }
 
