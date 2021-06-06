@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+var express_1 = require("express");
+var ItemsController_1 = require("./controllers/ItemsController");
+var routes = express_1.Router();
+exports.routes = routes;
+var itemsController = new ItemsController_1.ItemsController();
+routes.post('/items', itemsController.create);
+routes.get('/items', itemsController.getItems);
